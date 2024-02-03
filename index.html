@@ -7,23 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header">
-        TO DO LIST
-    </div>
-    <div class="main">
-    <div class="todo-container">
-        <div class="user-task">
-            <input type="text" id="userTask" placeholder="What i'm gonna do today...">
-            <button 
-            id="submitTask"
-            class="submit-task"
-            type="button" onclick="addTask()">+</button>
-        </div>
+        <h1>TO DO LIST</h1>
 
-        <ul class="my-tasks" id="myTasks">
-        </ul>
-    </div>
-</div>
+        <form id="myForm">
+            <input type="text" id="userTask" placeholder="What i'm gonna do today...">
+            <button>+</button>
+        </form>
+
+        <ul class="my-tasks" id="myTasks"></ul>
+
     <script src="index.js"></script>
 </body>
 </html>

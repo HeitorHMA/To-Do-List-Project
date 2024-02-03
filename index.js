@@ -1,15 +1,23 @@
-let userTask = document.getElementById("userTask")
-let myTasks = document.getElementById("myTasks")
+let form = document.querySelector("form")
+let myTasks = document.querySelector("#myTasks")
 
-function addTask(){
+function addTask(task){
     let li = document.createElement("li");
-    li.innerHTML = userTask.value;
+    li.innerHTML = `<input type = "checkbox"/><span>${task}</span><button>Delete</button>`;
     myTasks.appendChild(li);
-    let span = document.createElement("span")
-    span.innerHTML = "\u00d7"
-    li.appendChild(span)
 }
-document.getElementById('li').onclick = function() {
-    li.classList.toggle('active');
-}
+form.addEventListener('submit',(event)=>{
+    event.preventDefault();
+    let input = document.querySelector('#userTask');
+    let task = input.value;
+    addTask(task);
+    input.value = "";
+})
     
+myTasks.addEventListener('click', (event)=>{
+    if(event.target.tagName === "BUTTON"){
+        const listItem = event.target.parentElement;
+        myTasks.removeChild(listItem)
+    }
+})
+
