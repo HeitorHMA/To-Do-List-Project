@@ -3,7 +3,7 @@ let myTasks = document.querySelector("#myTasks")
 
 function addTask(task){
     let li = document.createElement("li");
-    li.innerHTML = `<input type = "checkbox"/><span>${task}</span><button>Delete</button>`;
+    li.innerHTML = `<input type = "checkbox" class="chckBox"/><span class="usrTsk">${task}</span><button class= "deletebtn">X</button>`;
     myTasks.appendChild(li);
 }
 form.addEventListener('submit',(event)=>{
